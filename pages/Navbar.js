@@ -22,7 +22,7 @@ function Navbar() {
             >
                 <HStack align="center" mr={5} spacing={15}>
                     <NextLink href="/">
-                        <Text fontSize="38px" color={pathname === '/' ? 'brandWhite.100' : 'brandWhite.900'}
+                        <Text fontSize="30px" color={pathname === '/' ? 'brandWhite.100' : 'brandWhite.900'}
                               fontWeight="bold">
                             <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
                                 {'<'}
@@ -35,7 +35,7 @@ function Navbar() {
                     </NextLink>
                     <NextLink href={'/projects'}>
 
-                        <Text ml={2} fontSize="28px" fontWeight="bold"
+                        <Text ml={2} fontSize="20px" fontWeight="bold"
                               color={pathname === '/projects' ? 'brandWhite.100' : 'brandWhite.900'}>
 
                             <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
