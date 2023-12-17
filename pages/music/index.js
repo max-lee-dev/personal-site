@@ -57,7 +57,7 @@ export default function Music() {
 
     async function myData() {
         // get user my details
-        const response = await fetch('\'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50\'', {
+        const response = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50', {
             headers: {
                 Authorization: `Bearer ${accesstoken}`,
             },
@@ -110,13 +110,17 @@ export default function Music() {
                             <Box bg={'transparent'} key={track.song} p={5} borderRadius={10} width={'50%'}
                                  textAlign={'center'}>
                                 <Center>
-                                    <a href={track.song}>
-                                        <img width={'200px'} src={track.image} alt={track.name}/>
-                                    </a>
+                                    <VStack>
+                                        <a href={track.song}>
+                                            <img width={'200px'} src={track.image} alt={track.name}/>
+                                        </a>
 
-                                    <Text fontSize={'24px'}>{track.name}</Text>
-                                    <Text>{track.artist}</Text>
-                                    <Text>{track.popularity}</Text>
+                                        <Box>
+                                            <Text fontSize={'30px'}>{track.name}</Text>
+                                            <Text fontSize={'16px'}>{track.artist}</Text>
+                                            <Text>popularity: {track.popularity}</Text>
+                                        </Box>
+                                    </VStack>
                                 </Center>
                             </Box>
 
