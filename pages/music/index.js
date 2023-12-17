@@ -107,7 +107,7 @@ export default function Music() {
                         {tracks.map((track) => (
 
 
-                            <Box bg={'transparent'} key={track.song} bg={''} p={5} borderRadius={10} width={'50%'}
+                            <Box bg={'transparent'} key={track.song} p={5} borderRadius={10} width={'50%'}
                                  textAlign={'center'}>
                                 <a href={track.song}>
                                     <img src={track.image} alt={track.name}/>
