@@ -110,7 +110,7 @@ export default function Music() {
                             <Box bg={'transparent'} key={track.song} p={5} borderRadius={10} width={'50%'}
                                  textAlign={'center'}>
                                 <a href={track.song}>
-                                    <img src={track.image} alt={track.name}/>
+                                    <img width={'200px'} src={track.image} alt={track.name}/>
                                 </a>
                                 <Text fontSize={'24px'}>{track.name}</Text>
                                 <Text>{track.artist}</Text>
