@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Box, HStack, VStack, Text} from '@chakra-ui/react';
+import {Box, HStack, VStack, Text, Center} from '@chakra-ui/react';
 import {usePathname} from "next/navigation";
 import {useColorModeValue} from "@chakra-ui/react";
 
@@ -109,12 +109,15 @@ export default function Music() {
 
                             <Box bg={'transparent'} key={track.song} p={5} borderRadius={10} width={'50%'}
                                  textAlign={'center'}>
-                                <a href={track.song}>
-                                    <img width={'200px'} src={track.image} alt={track.name}/>
-                                </a>
-                                <Text fontSize={'24px'}>{track.name}</Text>
-                                <Text>{track.artist}</Text>
-                                <Text>{track.popularity}</Text>
+                                <Center>
+                                    <a href={track.song}>
+                                        <img width={'200px'} src={track.image} alt={track.name}/>
+                                    </a>
+
+                                    <Text fontSize={'24px'}>{track.name}</Text>
+                                    <Text>{track.artist}</Text>
+                                    <Text>{track.popularity}</Text>
+                                </Center>
                             </Box>
 
 
