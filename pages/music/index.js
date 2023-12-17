@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Text} from '@chakra-ui/react';
+import {Box, HStack, VStack, Text} from '@chakra-ui/react';
 import {usePathname} from "next/navigation";
 import {useColorModeValue} from "@chakra-ui/react";
 
@@ -69,6 +69,9 @@ export default function Music() {
                 return {
                     song: track.external_urls.spotify,
                     artist: track.artists[0].name,
+                    name: track.name,
+                    popularity: track.popularity,
+
                     image: track.album.images[0].url
                 };
 
@@ -100,14 +103,23 @@ export default function Music() {
                     <button onClick={requestAuthorization}>login</button>
                     <Text>{accesstoken} updated</Text>
                     <button onClick={myData}>get data</button>
-                    <ul>
+                    <VStack>
                         {tracks.map((track) => (
-                            <li key={track.song}>
-                                <img width={200} src={track.image} alt={track.song}/>
-                                <a href={track.song}>{track.artist}</a>
-                            </li>
+
+
+                            <Box key={track.song} bg={'brandWhite.100'} p={5} borderRadius={10} width={'50%'}
+                                 textAlign={'center'}>
+                                <a href={track.song}>
+                                    <img src={track.image} alt={track.name}/>
+                                </a>
+                                <Text>{track.name}</Text>
+                                <Text>{track.artist}</Text>
+                                <Text>{track.popularity}</Text>
+                            </Box>
+
+
                         ))}
-                    </ul>
+                    </VStack>
                 </Box>
             </main>
         </>
