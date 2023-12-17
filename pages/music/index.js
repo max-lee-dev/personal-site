@@ -103,7 +103,7 @@ export default function Music() {
                     <ul>
                         {tracks.map((track) => (
                             <li key={track.song}>
-                                <img src={track.image} alt={track.song}/>
+                                <img width={200} src={track.image} alt={track.song}/>
                                 <a href={track.song}>{track.artist}</a>
                             </li>
                         ))}
