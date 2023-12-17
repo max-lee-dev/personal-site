@@ -26,6 +26,28 @@ export default function Music() {
             const params = new URLSearchParams(window.location.search);
             const code = params.get('code');
             console.log(code)
+            const body = {
+                grant_type: 'authorization_code',
+                code: code,
+                redirect_uri: redirect_uri,
+                client_id: CLIENT_ID,
+                client_secret: CLIENT_SECRET,
+            };
+            const headers = {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            };
+            fetch('https://accounts.spotify.com/api/token', {
+                method: 'POST',
+                headers: headers,
+                body: new URLSearchParams(body),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data)
+                    setAccessToken(data.access_token)
+                });
+
+
         }
 
 
