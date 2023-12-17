@@ -101,18 +101,18 @@ export default function Music() {
                 <Box color={'white'}>
                     <h1>music</h1>
                     <button onClick={requestAuthorization}>login</button>
-                    <Text>{accesstoken} updated</Text>
+                    <Text color={"brand.900"}>{accesstoken} updated</Text>
                     <button onClick={myData}>get data</button>
                     <VStack>
                         {tracks.map((track) => (
 
 
-                            <Box key={track.song} bg={'brandWhite.100'} p={5} borderRadius={10} width={'50%'}
+                            <Box bg={'transparent'} key={track.song} bg={''} p={5} borderRadius={10} width={'50%'}
                                  textAlign={'center'}>
                                 <a href={track.song}>
                                     <img src={track.image} alt={track.name}/>
                                 </a>
-                                <Text>{track.name}</Text>
+                                <Text fontSize={'24px'}>{track.name}</Text>
                                 <Text>{track.artist}</Text>
                                 <Text>{track.popularity}</Text>
                             </Box>
