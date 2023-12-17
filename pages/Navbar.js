@@ -1,14 +1,18 @@
 import React from 'react';
 import {Box, Flex, Text, Link, HStack, Button, useColorMode, useColorModeValue} from '@chakra-ui/react';
 import {useRouter} from 'next/router';
+import {MoonIcon, SunIcon} from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import {useMediaQuery} from '@chakra-ui/react';
 import {usePathname} from "next/navigation";
 
 function Navbar() {
+    const {toggleColorMode} = useColorMode();
     const pathname = usePathname();
     return (
         <Box paddingTop={'50px'} fontFamily={'Source Code Pro'}>
+
+
             <Flex
                 as="nav"
                 align="center"
@@ -47,8 +51,20 @@ function Navbar() {
                             </Text>
                         </Text>
                     </NextLink>
-
+                    <NextLink href={'/music'}>
+                        <Text ml={2} fontSize="20px" fontWeight="bold"
+                              color={pathname === '/music' ? 'brandWhite.100' : 'brandWhite.900'}>
+                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
+                                {'<'}
+                            </Text>
+                            {'music'}
+                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
+                                {'>'}
+                            </Text>
+                        </Text>
+                    </NextLink>
                 </HStack>
+
             </Flex>
         </Box>
     );

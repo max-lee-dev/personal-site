@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import {ChakraProvider, Box, Center} from "@chakra-ui/react";
+import {ChakraProvider, Box, Center, Text, useColorMode, useColorModeValue} from "@chakra-ui/react";
 import Navbar from "./Navbar.js";
 import {extendTheme} from "@chakra-ui/react";
 
@@ -19,12 +19,14 @@ const colors = {
 
 export const theme = extendTheme({colors})
 
+
 export default function App({Component, pageProps}) {
     return (
         <ChakraProvider theme={theme}>
-            <Box minH={'100vh'} bg={'bg.100'}>
+            <Box minH={'100vh'} bg={"bg.100"}>
                 <Center>
                     <Box width={'50%'}>
+
                         <Navbar/>
                         <Component {...pageProps} />
                     </Box>
