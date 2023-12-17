@@ -7,7 +7,7 @@ export default function Music() {
     const CLIENT_ID = "5076e52b92314231bf0104f7a0048eba";
     const CLIENT_SECRET = "1b90606d9ea14fdda1acb4cd2ede5a60";
     const [accesstoken, setAccessToken] = useState("");
-    const redirect_uri = "http://max-lee.dev/music";
+    const redirect_uri = "https://max-lee.dev/music";
     useEffect(() => {
         var authParameters = {
             method: 'POST',
@@ -21,6 +21,12 @@ export default function Music() {
         fetch('https://accounts.spotify.com/api/token', authParameters)
             .then(response => response.json())
             .then(data => setAccessToken(data.access_token))
+
+        if (window.location.search.length > 0) {
+            const params = new URLSearchParams(window.location.search);
+            const code = params.get('code');
+            console.log(code)
+        }
 
 
     }, [])
