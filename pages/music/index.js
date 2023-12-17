@@ -83,7 +83,7 @@ export default function Music() {
                 <Box color={'white'}>
                     <h1>music</h1>
                     <button onClick={requestAuthorization}>login</button>
-                    <Text>{accesstoken}</Text>
+                    <Text>{accesstoken} updated</Text>
                 </Box>
             </main>
         </>
