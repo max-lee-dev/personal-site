@@ -57,7 +57,7 @@ export default function Music() {
 
     async function myData() {
         // get user my details
-        const response = await fetch('https://api.spotify.com/v1/me/top/artists', {
+        const response = await fetch('https://api.spotify.com/v1/me/top/tracks', {
             headers: {
                 Authorization: `Bearer ${accesstoken}`,
             },
@@ -67,9 +67,9 @@ export default function Music() {
         console.log(data)
         let tracks = data.items.map((track) => {
                 return {
-                    artist: track.name,
                     song: track.external_urls.spotify,
-                    image: track.images[0].url,
+                    artist: track.artists[0].name,
+                    image: track.album.images[0].url
                 };
 
             }
