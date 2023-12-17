@@ -57,7 +57,7 @@ export default function Music() {
 
     async function myData() {
         // get user my details
-        const response = await fetch('https://api.spotify.com/v1/me/top/tracks', {
+        const response = await fetch('\'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50\'', {
             headers: {
                 Authorization: `Bearer ${accesstoken}`,
             },
