@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Box, HStack, VStack, Text, Center} from '@chakra-ui/react';
+import {Box, Button, HStack, VStack, Text, Center, SimpleGrid} from '@chakra-ui/react';
 import {usePathname} from "next/navigation";
 import {useColorModeValue} from "@chakra-ui/react";
+import handler from "../../pages/api/hello";
 
 export default function Music() {
     const CLIENT_ID = "5076e52b92314231bf0104f7a0048eba";
@@ -52,42 +53,58 @@ export default function Music() {
 
         }
 
+        test();
+
 
     }, [])
 
-    async function myData() {
-        // get user my details
-        const response = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50', {
+    async function test() {
+        const response = await fetch('/api/hello', {
+            method: 'POST',
             headers: {
-                Authorization: `Bearer ${accesstoken}`,
+                'Content-Type': 'application/json',
             },
-
+            body: JSON.stringify({name: 'test'}),
         });
-
-
         const data = await response.json();
-
-
-        console.log(data)
-        let tracks = data.items.map((track) => {
-                return {
-                    song: track.external_urls.spotify,
-                    artist: track.artists[0].name,
-                    name: track.name,
-                    popularity: track.popularity,
-
-                    image: track.album.images[0].url
-                };
-
-            }
-        );
-
-        setTracks(tracks)
-
-        console.log(JSON.stringify(tracks));
-
+        setTracks(data)
 
     }
+
+
+    // async function myData() {
+    //     // get user my details
+    //     const response = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50', {
+    //         headers: {
+    //             Authorization: `Bearer ${accesstoken}`,
+    //         },
+    //
+    //     });
+    //
+    //
+    //     const data = await response.json();
+    //
+    //
+    //     console.log(data)
+    //     let tracks = data.items.map((track) => {
+    //             return {
+    //                 song: track.external_urls.spotify,
+    //                 artist: track.artists[0].name,
+    //                 name: track.name,
+    //                 popularity: track.popularity,
+    //
+    //                 image: track.album.images[0].url
+    //             };
+    //
+    //         }
+    //     );
+    //
+    //     setTracks(tracks)
+    //
+    //     console.log(JSON.stringify(tracks));
+    //
+    //
+    // }
 
     async function requestAuthorization() {
         let url = 'https://accounts.spotify.com/authorize';
@@ -108,8 +125,7 @@ export default function Music() {
                     <h1>music</h1>
                     <button onClick={requestAuthorization}>login</button>
                     <Text color={"brand.900"}>{accesstoken} updated</Text>
-                    <button onClick={myData}>get data</button>
-                    <VStack>
+                    <SimpleGrid columns={2} spacing={10}>
                         {tracks.map((track) => (
 
 
@@ -118,7 +134,7 @@ export default function Music() {
                                 <Center>
                                     <VStack>
                                         <a href={track.song}>
-                                            <img width={'200px'} src={track.image} alt={track.name}/>
+                                            <img width={'500px'} src={track.image} alt={track.name}/>
                                         </a>
 
                                         <Box>
@@ -132,7 +148,8 @@ export default function Music() {
 
 
                         ))}
-                    </VStack>
+                    </SimpleGrid>
+                    <Button onClick={test}>test</Button>
                 </Box>
             </main>
         </>
