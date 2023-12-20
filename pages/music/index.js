@@ -67,7 +67,7 @@ export default function Music() {
             body: JSON.stringify({name: 'test'}),
         });
         const data = await response.json();
-        setTracks(data)
+        setTracks(data) // i want more info
 
     }
 
@@ -88,12 +88,7 @@ export default function Music() {
     //     console.log(data)
     //     let tracks = data.items.map((track) => {
     //             return {
-    //                 song: track.external_urls.spotify,
-    //                 artist: track.artists[0].name,
-    //                 name: track.name,
-    //                 popularity: track.popularity,
-    //
-    //                 image: track.album.images[0].url
+    //                 track
     //             };
     //
     //         }
@@ -123,8 +118,6 @@ export default function Music() {
             <main>
                 <Box color={'white'}>
                     <h1>music</h1>
-                    <button onClick={requestAuthorization}>login</button>
-                    <Text color={"brand.900"}>{accesstoken} updated</Text>
                     <SimpleGrid columns={2} spacing={10}>
                         {tracks.map((track) => (
 

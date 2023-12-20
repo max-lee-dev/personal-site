@@ -10,6 +10,7 @@ export default function Home() {
     return (
         <Box margin={5} bg={'red'} className={'font'}>
             <Text>hey</Text>
+            <Text>this is my w.i.p. portfolio site!!!!</Text>
         </Box>
     )
 }
