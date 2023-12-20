@@ -61,9 +61,13 @@ export default function Music() {
             headers: {
                 Authorization: `Bearer ${accesstoken}`,
             },
+
         });
 
+
         const data = await response.json();
+
+
         console.log(data)
         let tracks = data.items.map((track) => {
                 return {
@@ -79,6 +83,8 @@ export default function Music() {
         );
 
         setTracks(tracks)
+
+        console.log(JSON.stringify(tracks));
 
 
     }

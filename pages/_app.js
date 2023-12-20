@@ -25,7 +25,7 @@ export default function App({Component, pageProps}) {
         <ChakraProvider theme={theme}>
             <Box minH={'100vh'} bg={"bg.100"}>
                 <Center>
-                    <Box width={'50%'}>
+                    <Box width={['100%', '70%', '50%']}>
 
                         <Navbar/>
                         <Component {...pageProps} />
