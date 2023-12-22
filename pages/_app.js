@@ -30,12 +30,12 @@ export default function App({Component, pageProps, router}) {
     return (
 
         <ChakraProvider theme={theme}>
-            <AnimatePresence>
+            <AnimatePresence mode={"wait"}>
                 <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"} exit="pageExit"
                             variants={{
-                                pageInitial: {
 
-                                    opacity: 0.97,
+
+                                pageInitial: {
                                     transition: {
                                         duration: 0.5
                                     },
@@ -43,20 +43,56 @@ export default function App({Component, pageProps, router}) {
 
 
                                 pageAnimate: {
+
                                     opacity: 1,
                                     transition: {
                                         duration: 0.5
                                     },
                                 },
 
+                                pageExit: {
+                                    transition: {
+                                        duration: 0.5
+                                    },
+                                }
+
 
                             }}>
                     <Box minH={'100vh'} bg={"bg.100"}>
                         <Center>
-                            <Box width={['100%', '70%', '50%']}>
+                            <Box width={['100%', '70%', '60%', '50%']}>
 
                                 <Navbar/>
-                                <Component {...pageProps} />
+                                <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"}
+                                            exit="pageExit"
+                                            variants={{
+                                                pageInitial: {
+                                                    opacity: 0,
+                                                    y: 1000,
+                                                },
+                                                pageAnimate: {
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    transition: {
+                                                        duration: 1,
+
+                                                    },
+                                                },
+
+                                                pageExit: {
+                                                    opacity: 0,
+                                                    y: 1000,
+                                                    transition: {
+                                                        duration: 1,
+
+                                                    },
+                                                }
+
+                                            }}>
+
+
+                                    <Component {...pageProps} />
+                                </motion.div>
                             </Box>
                         </Center>
                     </Box>
