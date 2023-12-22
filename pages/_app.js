@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import {ChakraProvider, Box, Center, Text, useColorMode, useColorModeValue} from "@chakra-ui/react";
 import Navbar from "./Navbar.js";
+import {motion, AnimatePresence} from "framer-motion";
 import {extendTheme} from "@chakra-ui/react";
 
 const colors = {
@@ -11,7 +12,12 @@ const colors = {
         100: "#161616"
     },
     brandWhite: {
-        100: "#e0e0e0",
+        100: "#d2d2d2",
+        900: "#b4b4b4"
+    },
+
+    brandGray: {
+        100: "rgba(148,148,148,0.56)",
         900: "#b4b4b4"
     }
 
@@ -20,19 +26,42 @@ const colors = {
 export const theme = extendTheme({colors})
 
 
-export default function App({Component, pageProps}) {
+export default function App({Component, pageProps, router}) {
     return (
+
         <ChakraProvider theme={theme}>
-            <Box minH={'100vh'} bg={"bg.100"}>
-                <Center>
-                    <Box width={['100%', '70%', '50%']}>
+            <AnimatePresence>
+                <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"} exit="pageExit"
+                            variants={{
+                                pageInitial: {
 
-                        <Navbar/>
-                        <Component {...pageProps} />
+                                    opacity: 0.97,
+                                    transition: {
+                                        duration: 0.5
+                                    },
+                                },
+
+
+                                pageAnimate: {
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 0.5
+                                    },
+                                },
+
+
+                            }}>
+                    <Box minH={'100vh'} bg={"bg.100"}>
+                        <Center>
+                            <Box width={['100%', '70%', '50%']}>
+
+                                <Navbar/>
+                                <Component {...pageProps} />
+                            </Box>
+                        </Center>
                     </Box>
-                </Center>
-            </Box>
-
+                </motion.div>
+            </AnimatePresence>
         </ChakraProvider>
     );
 }

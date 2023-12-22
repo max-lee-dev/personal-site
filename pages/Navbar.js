@@ -1,16 +1,18 @@
 import React from 'react';
-import {Box, Flex, Text, Link, HStack, Button, useColorMode, useColorModeValue} from '@chakra-ui/react';
+import {motion} from "framer-motion";
+import {Box, Divider, Flex, Text, Link, HStack, Button, useColorMode, useColorModeValue} from '@chakra-ui/react';
 import {useRouter} from 'next/router';
 import {MoonIcon, SunIcon} from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import {useMediaQuery} from '@chakra-ui/react';
+
 import {usePathname} from "next/navigation";
 
 function Navbar() {
     const {toggleColorMode} = useColorMode();
     const pathname = usePathname();
     return (
-        <Box paddingTop={'50px'} fontFamily={'Source Code Pro'}>
+        <Box paddingTop={'25px'} paddingBottom={'30px'} fontFamily={'Source Code Pro'}>
 
 
             <Flex
@@ -18,54 +20,60 @@ function Navbar() {
                 align="center"
                 justify="space-between"
                 wrap="wrap"
-                padding="1.5rem"
+                padding={3}
+
                 bg={"bg.100"}
                 position="sticky"
-                top="0"
                 zIndex="sticky"
             >
                 <HStack align="center" mr={5} spacing={15}>
                     <NextLink href="/">
-                        <Text fontSize="30px" color={pathname === '/' ? 'brandWhite.100' : 'brandWhite.900'}
+                        <Text fontSize="20px" color={pathname === '/' ? 'brandWhite.100' : 'brandGray.100'}
                               fontWeight="bold">
-                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
-                                {'<'}
-                            </Text>
-                            {'max-lee'}
-                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
-                                {'>'}
-                            </Text>
+                            /
                         </Text>
                     </NextLink>
                     <NextLink href={'/projects'}>
 
                         <Text ml={2} fontSize="20px" fontWeight="bold"
-                              color={pathname === '/projects' ? 'brandWhite.100' : 'brandWhite.900'}>
+                              color={pathname === '/projects' ? 'brandWhite.100' : 'brandGray.100'}>
 
-                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
-                                {'<'}
-                            </Text>
-                            {'projects'}
-                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
-                                {'>'}
-                            </Text>
+                            /projects
                         </Text>
                     </NextLink>
                     <NextLink href={'/music'}>
                         <Text ml={2} fontSize="20px" fontWeight="bold"
-                              color={pathname === '/music' ? 'brandWhite.100' : 'brandWhite.900'}>
-                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
-                                {'<'}
-                            </Text>
-                            {'music'}
-                            <Text as="span" color={useColorModeValue('gray.600', 'gray.200')}>
-                                {'>'}
-                            </Text>
+                              color={pathname === '/music' ? 'brandWhite.100' : 'brandGray.100'}>
+                            /music
                         </Text>
                     </NextLink>
                 </HStack>
 
             </Flex>
+            <motion.div
+                initial={"hidden"}
+                animate={"visible"}
+
+                variants={{
+                    hidden: {
+                        opacity: 0,
+                        y: 10
+                    },
+                    visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            delay: 0.1,
+                            duration: 0.5,
+                            when: "beforeChildren",
+                            staggerChildren: 0.01
+                        }
+
+                    }
+                }}
+            >
+                <Divider orientation="horizontal" borderColor="brandGray.100"/>
+            </motion.div>
         </Box>
     );
 
