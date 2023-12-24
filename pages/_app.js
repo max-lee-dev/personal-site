@@ -68,22 +68,22 @@ export default function App({Component, pageProps, router}) {
                                             variants={{
                                                 pageInitial: {
                                                     opacity: 0,
-                                                    y: 1000,
+                                                    y: 100,
                                                 },
                                                 pageAnimate: {
                                                     opacity: 1,
                                                     y: 0,
                                                     transition: {
-                                                        duration: 1,
+                                                        duration: 0.5,
 
                                                     },
                                                 },
 
                                                 pageExit: {
                                                     opacity: 0,
-                                                    y: 1000,
+                                                    y: 50,
                                                     transition: {
-                                                        duration: 1,
+                                                        duration: 0.5,
 
                                                     },
                                                 }
@@ -91,7 +91,9 @@ export default function App({Component, pageProps, router}) {
                                             }}>
 
 
-                                    <Component {...pageProps} />
+                                    <Box maxH={'100vh'}>
+                                        <Component {...pageProps} />
+                                    </Box>
                                 </motion.div>
                             </Box>
                         </Center>

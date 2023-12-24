@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Button, HStack, VStack, Text, Center, SimpleGrid} from '@chakra-ui/react';
+import {Box, Button, Image, HStack, VStack, Text, Center, SimpleGrid} from '@chakra-ui/react';
 import {usePathname} from "next/navigation";
 import {useColorModeValue} from "@chakra-ui/react";
 import handler from "../../pages/api/hello";
@@ -115,36 +115,35 @@ export default function Music() {
 
     return (
         <>
-            <main>
+            <Box fontFamily={'Lexend Deca'}>
                 <Box color={'white'}>
-                    <h1>music</h1>
-                    <SimpleGrid columns={2} spacing={10}>
+                    <HStack overflowX={'scroll'} alignItems={'center'}>
                         {tracks.map((track) => (
 
 
-                            <Box bg={'transparent'} key={track.song} p={5} borderRadius={10} width={'50%'}
+                            <Box minH={'100'} bg={'transparent'} key={track.song} padding={50} width={'100%'}
                                  textAlign={'center'}>
                                 <Center>
-                                    <VStack>
+                                    <Text>
                                         <a href={track.song}>
-                                            <img width={'500px'} src={track.image} alt={track.name}/>
+                                            <Image src={track.image} width={300} height={100}/>
                                         </a>
 
-                                        <Box>
-                                            <Text fontSize={'30px'}>{track.name}</Text>
-                                            <Text fontSize={'16px'}>{track.artist}</Text>
-                                            <Text>popularity: {track.popularity}</Text>
-                                        </Box>
-                                    </VStack>
+
+                                        <Text fontSize={'30px'} color={'brandGray.900'}>{track.name}</Text>
+                                        <Text color={'brandGray.100'} fontSize={'16px'}>{track.artist}</Text>
+
+                                    </Text>
+
+                                    {/*<Text>popularity: {track.popularity}</Text>*/}
                                 </Center>
                             </Box>
 
 
                         ))}
-                    </SimpleGrid>
-                    <Button onClick={test}>test</Button>
+                    </HStack>
                 </Box>
-            </main>
+            </Box>
         </>
     )
 
