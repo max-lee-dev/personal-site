@@ -8,7 +8,7 @@ const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
     return (
-        <Box color={'brandGray.100'} fontFamily={"Source Code Pro"}>
+        <Box color={'brandGray.100'} fontFamily={"Lexend Deca"}>
             <Text color={'brandWhite.100'} fontSize={'40px'}>hey im max </Text>
             <Text paddingTop={5} fontSize={'24px'}>I'm an aspiring full-stack developer who currently attends high
                 school in New York.

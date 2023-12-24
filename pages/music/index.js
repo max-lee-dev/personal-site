@@ -126,7 +126,7 @@ export default function Music() {
                                 <Center>
                                     <Text>
                                         <a href={track.song}>
-                                            <Image src={track.image} width={300} height={100}/>
+                                            <img src={track.image} width={300} height={100}/>
                                         </a>
 
 
