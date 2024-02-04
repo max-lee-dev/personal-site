@@ -3,23 +3,24 @@ import {ChakraProvider, Box, Center, Text, useColorMode, useColorModeValue} from
 import Navbar from "./Navbar.js";
 import {motion, AnimatePresence} from "framer-motion";
 import {extendTheme} from "@chakra-ui/react";
+import FlareCursor from "@/components/FlareCursor";
 
 const colors = {
-    brand: {
-        900: "#1a365d",
-    },
-    bg: {
-        100: "#161616"
-    },
-    brandWhite: {
-        100: "#d2d2d2",
-        900: "#b4b4b4"
-    },
+  brand: {
+    900: "#1a365d",
+  },
+  bg: {
+    100: "#161616"
+  },
+  brandWhite: {
+    100: "#d2d2d2",
+    900: "#b4b4b4"
+  },
 
-    brandGray: {
-        100: "rgba(148,148,148,0.56)",
-        900: "#b4b4b4"
-    }
+  brandGray: {
+    100: "rgba(148,148,148,0.56)",
+    900: "#b4b4b4"
+  }
 
 }
 
@@ -27,79 +28,82 @@ export const theme = extendTheme({colors})
 
 
 export default function App({Component, pageProps, router}) {
-    return (
+  return (
 
-        <ChakraProvider theme={theme}>
-            <AnimatePresence mode={"wait"}>
-                <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"} exit="pageExit"
+    <ChakraProvider theme={theme}>
+      <AnimatePresence mode={"wait"}>
+        <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"} exit="pageExit"
+                    variants={{
+
+
+                      pageInitial: {
+                        transition: {
+                          duration: 0.5
+                        },
+                      },
+
+
+                      pageAnimate: {
+
+                        opacity: 1,
+                        transition: {
+                          duration: 0.5
+                        },
+                      },
+
+                      pageExit: {
+                        transition: {
+                          duration: 0.5
+                        },
+                      }
+
+
+                    }}>
+          <Box minH={'100vh'} bg={"bg.100"} cursor={"none"}>
+            <Center>
+              <Box width={['100%', '70%', '60%', '50%']}>
+
+                <Navbar/>
+                <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"}
+                            exit="pageExit"
                             variants={{
+                              pageInitial: {
+                                opacity: 0,
+                                y: 100,
+                              },
+                              pageAnimate: {
+                                opacity: 1,
+                                y: 0,
+                                transition: {
+                                  duration: 0.5,
 
-
-                                pageInitial: {
-                                    transition: {
-                                        duration: 0.5
-                                    },
                                 },
+                              },
 
+                              pageExit: {
+                                opacity: 0,
+                                y: 50,
+                                transition: {
+                                  duration: 0.5,
 
-                                pageAnimate: {
-
-                                    opacity: 1,
-                                    transition: {
-                                        duration: 0.5
-                                    },
                                 },
-
-                                pageExit: {
-                                    transition: {
-                                        duration: 0.5
-                                    },
-                                }
-
+                              }
 
                             }}>
-                    <Box minH={'100vh'} bg={"bg.100"}>
-                        <Center>
-                            <Box width={['100%', '70%', '60%', '50%']}>
-
-                                <Navbar/>
-                                <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"}
-                                            exit="pageExit"
-                                            variants={{
-                                                pageInitial: {
-                                                    opacity: 0,
-                                                    y: 100,
-                                                },
-                                                pageAnimate: {
-                                                    opacity: 1,
-                                                    y: 0,
-                                                    transition: {
-                                                        duration: 0.5,
-
-                                                    },
-                                                },
-
-                                                pageExit: {
-                                                    opacity: 0,
-                                                    y: 50,
-                                                    transition: {
-                                                        duration: 0.5,
-
-                                                    },
-                                                }
-
-                                            }}>
 
 
-                                    <Box maxH={'100vh'}>
-                                        <Component {...pageProps} />
-                                    </Box>
-                                </motion.div>
-                            </Box>
-                        </Center>
-                    </Box>
+                  <Box maxH={'100vh'}>
+                    <FlareCursor/>
+                    <Component {...pageProps} />
+                  </Box>
                 </motion.div>
-            </AnimatePresence>
-        </ChakraProvider>
-    );
+              </Box>
+            </Center>
+          </Box>
+        </motion.div>
+
+
+      </AnimatePresence>
+    </ChakraProvider>
+  );
 }

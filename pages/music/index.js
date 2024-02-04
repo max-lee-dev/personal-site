@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Button, Image, HStack, VStack, Text, Center, SimpleGrid} from '@chakra-ui/react';
+import {Box, Button, HStack, VStack, Text, Center, SimpleGrid} from '@chakra-ui/react';
+import {Image} from "next/image";
 import {usePathname} from "next/navigation";
 import {useColorModeValue} from "@chakra-ui/react";
 import handler from "../../pages/api/hello";
