@@ -7,17 +7,17 @@ import styles from '@/styles/Home.module.css'
 const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
-    return (
-        <Box color={'brandGray.100'} fontFamily={"Lexend Deca"}>
-            <Text color={'brandWhite.100'} fontSize={'40px'}>hey i&apos;m max </Text>
-            <Text paddingTop={5} fontSize={'24px'}>I&apos;m an aspiring full-stack developer who currently attends high
-                school in New York.
-                I enjoy running mid/long distance while getting better at programming in my free
-                time.</Text>
+  return (
+    <Box color={'brandGray.100'} fontFamily={"Lexend Deca"}>
+      <Text color={'brandWhite.100'} fontSize={'40px'}>hey i&apos;m max </Text>
+      <Text paddingTop={5} fontSize={'24px'}>I&apos;m an aspiring full-stack developer who currently attends high
+        school in New York.
+        I enjoy running mid/long distance while getting better at programming in my free
+        time.</Text>
 
-            <Text paddingTop={5} fontSize={'24px'}>I believe improving is one of the most rewarding feelings. So
-                whether it be
-                LeetCode, competitive programming, running, or web development, I’m always seeking to get better.</Text>
-        </Box>
-    )
+      <Text paddingTop={5} fontSize={'24px'}>I believe improving is one of the most rewarding feelings. So
+        whether it be
+        competitive programming, running, or web development, I’m always seeking to get better.</Text>
+    </Box>
+  )
 }
