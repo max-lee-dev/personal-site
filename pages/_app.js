@@ -59,7 +59,7 @@ export default function App({Component, pageProps, router}) {
 
 
                     }}>
-          <Box minH={'100vh'} bg={"bg.100"} cursor={"none"}>
+          <Box minH={'100vh'} bg={"bg.100"}>
             <Center>
               <Box width={['100%', '70%', '60%', '50%']}>
 
@@ -93,7 +93,6 @@ export default function App({Component, pageProps, router}) {
 
 
                   <Box maxH={'100vh'}>
-                    <FlareCursor/>
                     <Component {...pageProps} />
                   </Box>
                 </motion.div>
