@@ -117,7 +117,7 @@ export default function Music() {
   return (
     <>
       <Box color={'white'} fontFamily={'Lexend Deca'}>
-        i'll put my favorite songs here!
+        i&apos;ll put my favorite songs here!
         {/*<Box color={'white'}>*/}
         {/*    <HStack overflowX={'scroll'} alignItems={'center'}>*/}
         {/*        {tracks.map((track) => (*/}
