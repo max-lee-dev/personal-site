@@ -70,7 +70,7 @@ export default function App({Component, pageProps, router}) {
 
                     }}>
           <Box minH={['140vh', '120vh']} bg={"brand.100"}>
-            <Box minH={['120vh', '108vh']} bg={"brand.100"}>
+            <Box minH={['125vh', '108vh']} bg={"brand.100"}>
               <Center>
                 <Box width={['100%', '70%', '60%', '50%']}>
 
