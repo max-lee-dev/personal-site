@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Box, Divider, Text, VStack, Image, Center} from '@chakra-ui/react';
 
-export default function Project({image, title, description, link}) {
+export default function Project({image, title, video, description, link}) {
 
   const [isHovered, setIsHovered] = useState(false)
 
@@ -11,16 +11,17 @@ export default function Project({image, title, description, link}) {
       onMouseLeave={() => setIsHovered(false)}
       alignSelf={['center', 'flex-start']}
       width={'350px'}
-      height={'250px'}
+      minHeight={'250px'}
       as={'a'}
       href={link}
       _hover={{
-        borderColor: 'brandWhite.100',
-        transform: 'scale(1.01)',
+        borderColor: 'brand.500',
+        transform: 'scale(1.05)',
         cursor: 'pointer',
         transition: 'all 0.1s'
       }}
-      borderWidth={1} borderRadius={5} color={'brandGray.100'} borderColor='brandGray.100'
+      borderWidth={1} borderRadius={5} color={'brand.900'}
+      borderColor={'brand.900'}
       fontFamily={"Lexend Deca"}>
       <VStack spacing={0}>
         <Box width={['350px']}
@@ -37,7 +38,7 @@ export default function Project({image, title, description, link}) {
                      style={{width: '98%', height: '20%', objectFit: 'cover'}}
               >
                 <source
-                  src="/images/hackertype.mp4" type="video/mp4"/>
+                  src={video} type="video/mp4"/>
               </video>
             </Center>
             :
@@ -46,17 +47,24 @@ export default function Project({image, title, description, link}) {
             <Image src={image}
                    alt={title}
                    objectFit={'cover'}
-                   borderRadius={5}
+                   borderTopRadius={5}
+                   p={0.5}
             />
           }
         </Box>
 
         {!isHovered &&
-          <Box width={'100%'}>
-            <Divider orientation="horizontal" borderColor="brandGray.100"/>
+          <Box width={'100%'}
+               bg={'brand.100'}
+               borderColor={'brand.900'}
+               borderBottomRadius={5}
+               borderTop={0}
+
+          >
+            <Divider borderColor={'brand.900'}/>
             <Box alignSelf='flex-start' px={3} py={2}>
               <Text color={'brandWhite.100'} fontWeight={600} fontSize={'20px'}>{title}</Text>
-              <Text color={'brandGray.100'} fontSize={'16px'}>{description}</Text>
+              <Text color={'brandGray.900'} fontSize={'16px'}>{description}</Text>
             </Box>
           </Box>}
 

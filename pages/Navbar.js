@@ -22,13 +22,13 @@ function Navbar() {
           justify="space-between"
           wrap="wrap"
           padding={3}
-          bg={"bg.100"}
+          bg={"brand.100"}
           position="sticky"
           zIndex="sticky"
         >
           <HStack align="center" mr={5} spacing={15}>
             <NextLink href="/">
-              <Text fontSize="20px" color={pathname === '/' ? 'brandWhite.100' : 'brandGray.100'}
+              <Text fontSize="20px" color={pathname === '/' ? 'brand.500' : 'brand.900'}
                     fontWeight="bold">
                 /
               </Text>
@@ -36,12 +36,12 @@ function Navbar() {
             <NextLink href={'/projects'}>
 
               <Text ml={2} fontSize="20px" fontWeight="bold"
-                    color={pathname === '/projects' ? 'brandWhite.100' : 'brandGray.100'}>/projects
+                    color={pathname === '/projects' ? 'brand.500' : 'brand.900'}>/projects
               </Text>
             </NextLink>
             <NextLink href={'/music'}>
               <Text ml={2} fontSize="20px" fontWeight="bold"
-                    color={pathname === '/music' ? 'brandWhite.100' : 'brandGray.100'}>
+                    color={pathname === '/music' ? 'brand.500' : 'brand.900'}>
                 /music
               </Text>
             </NextLink>
@@ -77,7 +77,7 @@ function Navbar() {
             }
           }}
         >
-          <Divider orientation="horizontal" borderColor="brandGray.100"/>
+          <Divider orientation="horizontal" borderColor="brand.600"/>
         </motion.div>
       </Box>
     </AnimatePresence>

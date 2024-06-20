@@ -4,23 +4,33 @@ import Navbar from "./Navbar.js";
 import {motion, AnimatePresence} from "framer-motion";
 import {extendTheme} from "@chakra-ui/react";
 import FlareCursor from "@/components/FlareCursor";
+import Footer from "@/components/Footer";
 
 const colors = {
   brand: {
-    900: "#1a365d",
+    100: "#E8EEFD",
+    200: "#D1DFFA",
+    300: "#B5C4F3",
+    400: "#9AA9EC",
+    500: "#1349D8",
+    600: "#0a256c",
+    700: "#051641",
+    800: "#040f2b",
+    900: "#02071a"
   },
   bg: {
     100: "#161616"
   },
   brandWhite: {
-    100: "#d2d2d2",
-    900: "#b4b4b4"
+    100: "#02071a",
+    900: "#0a256c"
   },
 
   brandGray: {
     100: "rgba(148,148,148,0.56)",
-    900: "#b4b4b4"
+    900: "#38466C"
   }
+
 
 }
 
@@ -59,46 +69,53 @@ export default function App({Component, pageProps, router}) {
 
 
                     }}>
-          <Box minH={'120vh'} bg={"bg.100"}>
-            <Center>
-              <Box width={['100%', '70%', '60%', '50%']}>
+          <Box minH={['140vh', '120vh']} bg={"brand.100"}>
+            <Box minH={['120vh', '108vh']} bg={"brand.100"}>
+              <Center>
+                <Box width={['100%', '70%', '60%', '50%']}>
 
-                <Navbar/>
-                <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"}
-                            exit="pageExit"
-                            variants={{
-                              pageInitial: {
-                                opacity: 0,
-                                y: 100,
-                              },
-                              pageAnimate: {
-                                opacity: 1,
-                                y: 0,
-                                transition: {
-                                  duration: 0.5,
-
+                  <Navbar/>
+                  <motion.div key={router.route} initial={"pageInitial"} animate={"pageAnimate"}
+                              exit="pageExit"
+                              variants={{
+                                pageInitial: {
+                                  opacity: 0,
+                                  y: 100,
                                 },
-                              },
+                                pageAnimate: {
+                                  opacity: 1,
+                                  y: 0,
+                                  transition: {
+                                    duration: 0.5,
 
-                              pageExit: {
-                                opacity: 0,
-                                y: 50,
-                                transition: {
-                                  duration: 0.5,
-
+                                  },
                                 },
-                              }
 
-                            }}>
+                                pageExit: {
+                                  opacity: 0,
+                                  y: 50,
+                                  transition: {
+                                    duration: 0.5,
+
+                                  },
+                                }
+
+                              }}>
 
 
-                  <Box maxH={'100vh'}>
-                    <Component {...pageProps} />
-                  </Box>
-                </motion.div>
-              </Box>
-            </Center>
+                    <Box maxH={'100vh'}>
+                      <Component {...pageProps} />
+                    </Box>
+                  </motion.div>
+                </Box>
+              </Center>
+
+            </Box>
+
+            <Footer/>
           </Box>
+
+
         </motion.div>
 
 
