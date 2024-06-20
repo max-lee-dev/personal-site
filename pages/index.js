@@ -23,7 +23,6 @@ export default function Home() {
           <Image
             src={'images/Max.png'}
             borderColor="brand.600"
-
             borderWidth={2}
             borderStyle="solid"
             borderRadius="full"

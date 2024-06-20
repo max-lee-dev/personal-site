@@ -39,12 +39,12 @@ function Navbar() {
                     color={pathname === '/projects' ? 'brand.500' : 'brand.900'}>/projects
               </Text>
             </NextLink>
-            <NextLink href={'/music'}>
-              <Text ml={2} fontSize="20px" fontWeight="bold"
-                    color={pathname === '/music' ? 'brand.500' : 'brand.900'}>
-                /music
-              </Text>
-            </NextLink>
+            {/*<NextLink href={'/music'}>*/}
+            {/*  <Text ml={2} fontSize="20px" fontWeight="bold"*/}
+            {/*        color={pathname === '/music' ? 'brand.500' : 'brand.900'}>*/}
+            {/*    /music*/}
+            {/*  </Text>*/}
+            {/*</NextLink>*/}
           </HStack>
 
         </Flex>
