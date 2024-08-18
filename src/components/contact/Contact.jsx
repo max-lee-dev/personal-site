@@ -14,7 +14,7 @@ const Contact = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        content: `@everyone ${e.target.name.value} (${e.target.email.value}):\n${e.target.message.value}`,
+        content: `@everyone ${e.target.name.value} (${e.target.email.value}): \n${e.target.message.value}`,
       }),
     })
     e.target.reset();
