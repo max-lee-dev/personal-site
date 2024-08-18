@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
-import AboutImg from "../../assets/about_img2.JPG";
-import Resume from "../../assets/Stuti_Shah_Resume.pdf";
+import AboutImg from "../../assets/about_me2.jpg";
+import Resume from "../../assets/Max_s_Resume.pdf";
 
 const About = () => {
   return (
@@ -13,23 +13,10 @@ const About = () => {
         <img src={AboutImg} alt="" className="about__img" />
         <div className="about__data">
           <p className="about__description">
-            Hey there! My name is Stuti and I'm a student at the University of
-            Minnesota-Twin Cities, studying computer science.{"\n"}
-            {"\n"}I'm interested in technology and programming, and I hope to
-            one day become a software engineer.{"\n"}
-            {"\n"}I've had a lot of success in my studies and have also gained
-            some practical experience through internships and{" "}
-            <a
-              style={{
-                color: "var(--title-color)",
-                fontWeight: "var(--font-medium)",
-              }}
-              href="https://devpost.com/iamstutishah"
-              target="_blank"
-            >
-              hackathons
-            </a>
-            .
+            Hey there! My name is Max and I'm a high school senior{"\n"}
+            {"\n"}I aim to create a life-changing start up one day. But, as of right now I’m simply passionate about running, playing competitive games, and getting better at programming.{"\n"}
+            {"\n"}I believe improving is one of the most rewarding feelings. So whichever passion it is, I’m always seeking to get better.{" "}
+
           </p>
 
           <a href={Resume} target="_blank" className="button button--flex">

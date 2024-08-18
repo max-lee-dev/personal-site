@@ -33,8 +33,8 @@ const Contact = () => {
 
               <h3 className="contact__card-title">Email</h3>
               <span className="contact__card-data">
-                <a href="mailto:hi@iamstuti.com" className="contact__button">
-                  hi@iamstuti.com
+                <a href="mailto:hey@max-lee.dev" className="contact__button">
+                  hey@max-lee.dev
                   <i className="bx bx-right-arrow-alt contact__button-icon"></i>
                 </a>
               </span>
@@ -47,11 +47,11 @@ const Contact = () => {
               <span className="contact__card-data">
                 {" "}
                 <a
-                  href="https://www.linkedin.com/in/iamstuti/"
+                  href="https://www.linkedin.com/in/max-lee-dev/"
                   className="contact__button"
                   target="_blank"
                 >
-                  iamstuti
+                  max-lee-dev
                   <i className="bx bx-right-arrow-alt contact__button-icon"></i>
                 </a>
               </span>
@@ -63,11 +63,11 @@ const Contact = () => {
               <h3 className="contact__card-title">Github</h3>
               <span className="contact__card-data">
                 <a
-                  href="https://github.com/iamstutishah"
+                  href="https://github.com/max-lee-dev"
                   className="contact__button"
                   target="_blank"
                 >
-                  iamstutishah
+                  max-lee-dev
                   <i className="bx bx-right-arrow-alt contact__button-icon"></i>
                 </a>
               </span>
