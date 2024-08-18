@@ -8,12 +8,15 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_dbook06",
-      "template_j67ziwq",
-      form.current,
-      "qe46WX6HS2-S96F_w"
-    );
+    fetch("https://discord.com/api/webhooks/1274733055851888750/WGJcWv9zJzK_k3sGcYJXvW16glcAkxh54i3kw5hRIVutUhymhbNxn29a4kmNbbGTqEmk", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: `@everyone ${e.target.name.value} (${e.target.email.value}):\n${e.target.message.value}`,
+      }),
+    })
     e.target.reset();
   };
 
