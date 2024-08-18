@@ -13,7 +13,7 @@ const About = () => {
         <img src={AboutImg} alt="" className="about__img" />
         <div className="about__data">
           <p className="about__description">
-            Hey there! My name is Max and I'm a high school senior{"\n"}
+            Hey there! My name is Max and I'm a high school senior.{"\n"}
             {"\n"}I aim to create a life-changing start up one day. But, as of right now I’m simply passionate about running, playing competitive games, and getting better at programming.{"\n"}
             {"\n"}I believe improving is one of the most rewarding feelings. So whichever passion it is, I’m always seeking to get better.{" "}
 
