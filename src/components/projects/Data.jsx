@@ -2,7 +2,8 @@ import EssaySwap from "../../assets/EssaySwap.png";
 import hackertype from "../../assets/hackertype.png";
 import sleepscore from "../../assets/sleepscore.png";
 import ResumeSwap from "../../assets/ResumeSwap.png";
-import PyScratch from "../../assets/PyScratch.jpg";
+import findecs from "../../assets/findecs.png";
+import gnsscioly from "../../assets/gnsscioly.png";
 
 export const projectsData = [
   {
@@ -11,14 +12,14 @@ export const projectsData = [
     title: "EssaySwap",
     category: "web app",
     link1: "https://essayswap.org",
-    link2: "https://github.com/max-lee-dev/",
   },
   {
     id: 2,
     image: ResumeSwap,
     title: "ResumeSwap",
     category: "web app",
-    link2: "https://resumeswap.org",
+    link1: "https://resumeswap.org",
+
   },
   {
     id: 3,
@@ -32,8 +33,23 @@ export const projectsData = [
     id: 4,
     image: sleepscore,
     title: "sleepscore",
-    category: "web app",
+    category: "mobile app",
     link2: "https://github.com/max-lee-dev/sleepscore",
+  },
+  {
+    id: 5,
+    image: findecs,
+    title: "FindECs",
+    category: "web app",
+    link1: "https://findecsarchive.org",
+  },
+  {
+    id: 6,
+    image: gnsscioly,
+    title: "GNS Scioly",
+    category: "web app",
+    link1: "https://gnsscioly.com",
+    link2: "https://github.com/max-lee-dev/gns-scioly"
   },
 
 ];
@@ -44,5 +60,8 @@ export const projectsNav = [
   },
   {
     name: "web app",
+  },
+  {
+    name: "mobile app",
   },
 ];
