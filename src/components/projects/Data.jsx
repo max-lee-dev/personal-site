@@ -1,18 +1,21 @@
 import EssaySwap from "../../assets/EssaySwap.png";
 import hackertype from "../../assets/hackertype.png";
 import sleepscore from "../../assets/sleepscore.png";
-import ResumeSwap from "../../assets/ResumeSwap.png";
+import ResumeSwap from "../../assets/resumeswap2.png";
 import findecs from "../../assets/findecs.png";
 import gnsscioly from "../../assets/gnsscioly.png";
+import TennisConnect from "../../assets/TennisConnect.png";
 
 export const projectsData = [
   {
     id: 1,
-    image: EssaySwap,
-    title: "EssaySwap",
+    image: hackertype,
+    title: "hackertype",
     category: "web app",
-    link1: "https://essayswap.org",
+    link1: "https://hackertype.dev",
+    link2: "https://github.com/max-lee-dev/hackertype",
   },
+
   {
     id: 2,
     image: ResumeSwap,
@@ -23,11 +26,10 @@ export const projectsData = [
   },
   {
     id: 3,
-    image: hackertype,
-    title: "hackertype",
-    category: "web app",
-    link1: "https://hackertype.dev",
-    link2: "https://github.com/max-lee-dev/hackertype",
+    image: TennisConnect,
+    title: "TennisConnect",
+    category: "mobile app",
+    link2: "https://github.com/max-lee-dev/tennisconnect",
   },
   {
     id: 4,
